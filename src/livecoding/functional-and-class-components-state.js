@@ -18,7 +18,7 @@ const ListItem = ({text, test}) => {
 
 class ListClass extends React.Component {
 
-    //используем для вывода изменений на экран
+    // используем для вывода изменений на экран
     state = {
         listData: [
             'First list item',
