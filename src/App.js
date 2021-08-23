@@ -1,18 +1,17 @@
 import React from "react";
-// eslint-disable-next-line
-import week5Day3Part1 from "./homework/week5Day3Part1";
-// eslint-disable-next-line
-import week5Day3Part2 from "./homework/week5Day3Part2";
-// eslint-disable-next-line
-import ListClass from "./livecoding/functional-and-class-components-state";
+import Week5Day3Part1 from "./homework/week5Day3Part1";
+import Week5Day3Part2 from "./homework/week5Day3Part2";
+import RefComponents from "./livecoding/RefComponents";
 import List from './livecoding/keys'
+import RefComponent from "./livecoding/RefComponents";
 
 class App extends React.Component {
     render () {
         return (
             <>
-                <List/>
-                {/*<week5Day3Part1/>*/}
+                {/*<List/>*/}
+                {/*<RefComponent/>*/}
+                <Week5Day3Part1/>
                 {/*<week5Day3Part2/>*/}
                 {/*<ListClass/>*/}
             </>
