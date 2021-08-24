@@ -4,6 +4,7 @@ import Week5Day3Part2 from "./homework/week5Day3Part2";
 import RefComponents from "./livecoding/RefComponents";
 import List from './livecoding/keys'
 import RefComponent from "./livecoding/RefComponents";
+import ToDo from "./pages/Todo/ToDo";
 
 class App extends React.Component {
     render () {
@@ -11,9 +12,11 @@ class App extends React.Component {
             <>
                 {/*<List/>*/}
                 {/*<RefComponent/>*/}
-                <Week5Day3Part1/>
+                {/*<Week5Day3Part1/>*/}
                 {/*<week5Day3Part2/>*/}
                 {/*<ListClass/>*/}
+                <h1>APP JS</h1>
+                <ToDo/>
             </>
         )
     }
