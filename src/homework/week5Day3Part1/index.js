@@ -54,15 +54,35 @@ const Week5Day3Part1 = () => {
     const ListDataToEnd = dataAddToEnd.map((elem) => <li key={elem.id}>{elem.value}</li>)
 
     const handlePromptAddToEnd = () => {
-            setDataAddToEnd(...dataAddToEnd, [{id: dataAddToEnd.length + 1, value: `${prompt()}`}]
-            
+            setDataAddToEnd([...dataAddToEnd, {id: dataAddToEnd.length + 1, value: `${prompt()}`}]
+
         )
 
     }
 
 
 
-    return (
+    // 2 add to middle of array
+
+    const[dataAddToMiddle, setDataAddToMiddle] = React.useState ([
+            {id: 1, value: 'first value'},
+            {id: 2, value: 'second value'},
+            {id: 3, value: 'third value'},
+            {id: 4, value: 'fourth value'},
+            {id: 5, value: 'fifth value'},
+        ])
+
+    const ListDataToMiddle = dataAddToMiddle.map((data) => <li key={data.id}>{data.value}</li>)
+    const handlePromptAddToMiddle = () => {
+        setDataAddToMiddle([
+            ...dataAddToMiddle.slice(0, Math.floor(dataAddToMiddle.length / 2)),
+            {id: dataAddToMiddle.length + 1, value: `${prompt()}`},
+            ...dataAddToMiddle.slice(Math.floor(dataAddToMiddle.length / 2))
+            ]
+        )
+    }
+
+   return (
         <>
             <ul>
                 {Task}
@@ -82,10 +102,22 @@ const Week5Day3Part1 = () => {
             <br/>
             <br/>
 
+
             <ul>
                 {ListDataToEnd}
             </ul>
             <button onClick={handlePromptAddToEnd}>Click to alert prompt and add data on end of array</button>
+
+
+            <br/>
+            <br/>
+            <br/>
+
+
+            <ul>
+                {ListDataToMiddle}
+            </ul>
+            <button onClick={handlePromptAddToMiddle}>Click to alert prompt and add data on middle of array</button>
         </>
 
     )
