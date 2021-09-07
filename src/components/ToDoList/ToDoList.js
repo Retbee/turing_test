@@ -4,7 +4,7 @@ const ToDoList = ({List}) => {
     return (
         <div>
             ToDoList
-            {List.map((elem, index) => <p key={index}>{index + 1}: {elem}></p>)}
+            {List.map((elem, index) => <p key={index}>{index + 1}: {elem}</p>)}
         </div>
     )
 }
