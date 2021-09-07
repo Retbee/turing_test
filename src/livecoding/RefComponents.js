@@ -7,7 +7,8 @@ const RefComponent = () => {
     React.useEffect(() => {
         console.log({ref})
         console.log(ref.current.clientWidth)
-        ref.current.clientWidth = 1500
+        // Необходимо использовать getter
+        // ref.current.clientWidth = 1500
     })
 
     return (
@@ -30,8 +31,6 @@ class RefClassComponent extends React.Component {
     handleButtonClick = () => {
         this.ref.current.focus()
     }
-
-
     render() {
         return (
             <>
@@ -51,7 +50,7 @@ class RefClassComponent extends React.Component {
                     <input/>
                 </div>
                 <div>Some div</div>
-                <button onClick={this.handleButtonClick}>sacsac</button>
+                <button onClick={this.handleButtonClick}>Peace</button>
             </>
         )
     }
