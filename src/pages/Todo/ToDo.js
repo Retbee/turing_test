@@ -1,24 +1,31 @@
 import React from "react";
+
 import AddToDoForm from "../../components/AddToDoForm/AddToDoForm";
 import ToDoList from '../../components/ToDoList/ToDoList'
 import styles from './ToDo.module.css'
 
+
 const ToDo = () => {
-    // const List = ['Wake up', 'Drink coffee']
-    const [List, setList] = React.useState (['Wake up', 'Drink coffee'])
+    const [list, setList] = React.useState([])
 
     const addElemToList = (elem) => {
-        console.log('addElemToList: ', elem)
-        // List.push(elem)
-        setList(...List, elem)
+        setList([...list, elem])
+    }
+
+    const deleteElemToDoList = (index) => {
+        // console.log('deleteElemToDoList', index)
+        setList([
+            ...list.slice(0, index),
+            ...list.slice(index + 1, list.length)
+            ]
+        )
     }
 
     return (
         <>
-            TO DO
-            <div>
-                <AddToDoForm onAddElem={addElemToList}/>
-                <ToDoList List={List}/>
+            <div className={styles.container}>
+                <AddToDoForm addElemToList={addElemToList}/>
+                <ToDoList list={list} deleteElem={deleteElemToDoList}/>
             </div>
         </>
     )

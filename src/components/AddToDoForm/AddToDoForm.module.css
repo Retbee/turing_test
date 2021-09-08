@@ -1,7 +1,7 @@
 .addToDoForm {
     padding: 16px;
-    margin: 4px;
-    border: 2px solid black;
+    margin: 6px;
+    border: 1px solid black;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -9,24 +9,9 @@
     height: 130px;
 }
 
-.button {
-    height: 40px;
-    font-size: 16px;
-    border-radius: 8px;
-    background-color: #3b3bea;
-    color: white;
-    border: 1px solid blue;
-    cursor: pointer;
-}
-
-
-.button:active {
-    background-color: #2a2aef;
-}
-
 .enterInput {
     height: 32px;
-    font-size: 16px;
     border-radius: 8px;
-    border: 1px solid blue
+    font-size: 16px;
+    border: 1px solid black;
 }

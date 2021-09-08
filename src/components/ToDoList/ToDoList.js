@@ -1,11 +1,24 @@
+import React from "react";
 import styles from './ToDoList.module.css'
+import Button from "../Button/Button";
 
-const ToDoList = ({List}) => {
+const ToDoList = ({list, deleteElem}) => {
+
+    // const handleOnClickDelete = (index) => {
+    //     console.log("handleOnClickDelete")
+    //     deleteElem(index)
+    // }
     return (
-        <div>
-            ToDoList
-            {List.map((elem, index) => <p key={index}>{index + 1}: {elem}</p>)}
-        </div>
+        <>
+            <h3>To Do List</h3>
+            <ul className={styles.toDoList}>
+                {list.map((elem, index) =>
+                    <li key={index} className={styles.toDoListItem}>
+                        {index + 1}: {elem}
+                        <Button text="Delete" isDelete={true} onClick={() => {deleteElem(index)}}/>
+                    </li>)}
+            </ul>
+        </>
     )
 }
 

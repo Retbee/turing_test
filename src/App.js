@@ -1,22 +1,26 @@
 import React from "react";
-import Week5Day3Part1 from "./homework/week5Day3Part1";
-import Week5Day3Part2 from "./homework/week5Day3Part2";
-import RefComponents from "./livecoding/RefComponents";
-import List from './livecoding/keys'
-import RefComponent from "./livecoding/RefComponents";
 import ToDo from "./pages/Todo/ToDo";
+import {Link, Route, Switch} from "react-router-dom";
 
 class App extends React.Component {
     render () {
         return (
             <>
-                {/*<List/>*/}
-                {/*<RefComponent/>*/}
-                {/*<Week5Day3Part1/>*/}
-                {/*<week5Day3Part2/>*/}
-                {/*<ListClass/>*/}
                 <h1>APP JS</h1>
-                <ToDo/>
+                <div>
+                    <Link to="/">ToDO Page</Link>
+                </div>
+                <div>
+                    <Link to="/test">Test Page</Link>
+                </div>
+                <Switch>
+                    <Route path="/test">
+                        <h1>Test page!</h1>
+                    </Route>
+                    <Route path="/">
+                        <ToDo/>
+                    </Route>
+                </Switch>
             </>
         )
     }
